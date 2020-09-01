@@ -7,7 +7,7 @@ pipeline {
      maven 'M2_HOME'
   }
 
- environment {
+  environment {
     registry = "nofatard/devop-pipeline"
     registryCredential = 'dockerID'
   }
