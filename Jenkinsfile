@@ -3,7 +3,10 @@ pipeline {
   tools {
      maven 'M2_HOME'
   }
-  environment {
+triggers {
+  pollSCM '* * * * * '
+}
+ environment {
     registry = "nofatard/devop-pipeline"
     registryCredential = 'dockerID'
   }
@@ -30,10 +33,7 @@ pipeline {
           def customImage1 = docker.build("nofatard/devops-pipeline")
           customImage.push()
           customImage1.push()
-<<<<<<< HEAD
-=======
-          
->>>>>>> d23e28a28d373258223adb96ae58155f474a7907
+
           }
     }
 }
