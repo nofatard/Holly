@@ -30,6 +30,10 @@ pipeline {
           def customImage1 = docker.build("nofatard/devops-pipeline")
           customImage.push()
           customImage1.push()
+<<<<<<< HEAD
+=======
+          
+>>>>>>> d23e28a28d373258223adb96ae58155f474a7907
           }
     }
 }
