@@ -27,7 +27,9 @@ pipeline {
           checkout scm
           docker.withRegistry('', 'DockerID') {
           def customImage = docker.build("nofatard/devops-pipeline:${env.BUILD_ID}")
+          def customImage1 = docker.build("nofatard/devops-pipeline")
           customImage.push()
+          customImage1.push()
           }
     }
 }
