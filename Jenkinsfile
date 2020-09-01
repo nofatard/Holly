@@ -1,8 +1,8 @@
 pipeline {
   agent any
 triggers {
-  pollSCM '* * * * *'
-}
+        cron('* * * * *')
+    }
   tools {
      maven 'M2_HOME'
   }
