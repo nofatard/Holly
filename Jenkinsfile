@@ -1,9 +1,11 @@
 pipeline {
   agent any
+   triggers {
+        pollSCM '* * * * *'
+    }
   tools {
      maven 'M2_HOME'
   }
-properties([pipelineTriggers([pollSCM('H * * * *')])])
   environment {
     registry = "nofatard/devop-pipeline"
     registryCredential = 'dockerID'
