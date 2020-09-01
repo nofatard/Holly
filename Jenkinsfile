@@ -3,6 +3,10 @@ pipeline {
 triggers {
         cron('H/1 * * * *')
     }
+  stages {
+...
+}
+}
   tools {
      maven 'M2_HOME'
   }
