@@ -42,7 +42,12 @@ pipeline {
         
     }
 }
-
+    stage ( 'deployment trigger'){
+          steps {
+            build 'abd-CI'
+}
+}
+ 
 
 
     
