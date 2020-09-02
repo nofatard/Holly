@@ -44,7 +44,7 @@ pipeline {
 }
     stage ( 'deployment trigger'){
           steps {
-            build 'abd-CD'
+            build 'abd-CD1'
 }
 }
  
