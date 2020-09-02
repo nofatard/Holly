@@ -1,6 +1,9 @@
 pipeline {
   agent any
-  properties([pipelineTriggers([pollSCM('* * * * *')])])
+  triggers {
+  pollSCM '* * * * *'
+}
+
   tools {
      maven 'M2_HOME'
   }
@@ -45,6 +48,13 @@ pipeline {
     }
   }
 }
+       stage ( 'deployment trigger'){
+          steps {
+            build 'abd-CD'
+}
+}
 
+
+    
 
 
