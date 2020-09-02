@@ -4,15 +4,6 @@ pipeline {
   pollSCM '* * * * *'
 }
 
-=======
-triggers {
- pollSCM('* * * * *')
-}
-  stages {
-...
-}
-}
->>>>>>> 4e81991b129a775b84bc320a198a51ee342d2b43
   tools {
      maven 'M2_HOME'
   }
@@ -42,8 +33,7 @@ triggers {
           def customImage = docker.build("nofatard/devops-pipeline:${env.BUILD_ID}")
           def customImage1 = docker.build("nofatard/devops-pipeline")
           customImage.push()
-          customImage1.push()
-
+          customImage1.push() 
           }
     }
 }
@@ -56,6 +46,7 @@ triggers {
     }
   }
 }
+
        stage ( 'deployment trigger'){
           steps {
             build 'abd-CD'
