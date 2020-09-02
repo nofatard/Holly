@@ -1,13 +1,22 @@
 pipeline {
   agent any
+<<<<<<< HEAD
   triggers {
   pollSCM '* * * * *'
 }
 
+=======
+triggers {
+ pollSCM('* * * * *')
+}
+  stages {
+...
+}
+}
+>>>>>>> 4e81991b129a775b84bc320a198a51ee342d2b43
   tools {
      maven 'M2_HOME'
   }
-
   environment {
     registry = "nofatard/devop-pipeline"
     registryCredential = 'dockerID'
